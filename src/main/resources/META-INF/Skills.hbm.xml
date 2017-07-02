@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ProjectManagmentSystem.pojo.Skills" table="skills">
+        <id name="skill_id" type="java.lang.Integer">
+            <column name="skill_id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="skill_name" type="java.lang.String">
+            <column name="skill_name" length="45" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
