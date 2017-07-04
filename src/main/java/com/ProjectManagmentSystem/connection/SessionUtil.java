@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class SessionUtil {
+
     private Session session;
     private Transaction transaction;
 

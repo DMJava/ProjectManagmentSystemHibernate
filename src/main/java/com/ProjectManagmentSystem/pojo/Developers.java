@@ -8,11 +8,16 @@ import java.util.Set;
 @Table(name = "developers")
 public class Developers {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "developer_id")
     private int developer_id;
+    @Column(name = "developer_name")
     private String developer_name;
+    @Column(name = "salary")
     private int salary;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     private Skills skills;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Projects> projects;
 
     public Developers() {
@@ -26,6 +31,10 @@ public class Developers {
         this.skills = skills;
         this.projects = projects;
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "developer_id", unique = true, nullable = false)
 
     public int getDeveloper_id() {
         return developer_id;

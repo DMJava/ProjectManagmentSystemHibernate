@@ -1,15 +1,12 @@
 package com.ProjectManagmentSystem.service;
 
-import com.ProjectManagmentSystem.connection.HibernateUtil;
 import com.ProjectManagmentSystem.connection.SessionUtil;
 import com.ProjectManagmentSystem.dao.DeveloperDAO;
 import com.ProjectManagmentSystem.pojo.Developers;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DeveloperService extends SessionUtil implements DeveloperDAO {

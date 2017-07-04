@@ -1,12 +1,7 @@
 package com.ProjectManagmentSystem.pojo;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "Skills")
 public class Skills {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int skill_id;
     private String skill_name;
 

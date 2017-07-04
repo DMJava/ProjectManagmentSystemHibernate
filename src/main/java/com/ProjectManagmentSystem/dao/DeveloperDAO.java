@@ -5,9 +5,6 @@ import com.ProjectManagmentSystem.pojo.Developers;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by pc on 20.06.2017.
- */
 public interface DeveloperDAO {
     //CREATE
     void add(Developers developer) throws SQLException;

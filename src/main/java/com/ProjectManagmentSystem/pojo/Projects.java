@@ -1,11 +1,20 @@
 package com.ProjectManagmentSystem.pojo;
 
+import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name = "projects")
 public class Projects {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "project_id")
     private int project_id;
+    @Column(name = "project_name")
     private String project_name;
+    @Column(name = "cost")
     private int cost;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Developers> developerList;
 
     public Projects() {
