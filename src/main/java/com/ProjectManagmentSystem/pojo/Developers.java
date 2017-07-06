@@ -29,10 +29,10 @@ public class Developers {
 
     }
 
-    public Developers(int developer_id, String developer_name, int salary, Set<Projects> projects) {
-        this.developer_id = developer_id;
+    public Developers(String developer_name, int salary, Set<Skills> skills, Set<Projects> projects) {
         this.developer_name = developer_name;
         this.salary = salary;
+        this.skills = skills;
         this.projects = projects;
     }
 
@@ -82,6 +82,7 @@ public class Developers {
                 "developer_id=" + developer_id +
                 ", developer_name='" + developer_name + '\'' +
                 ", salary=" + salary +
+                ", skills=" + skills +
                 ", projects=" + projects +
                 '}';
     }
