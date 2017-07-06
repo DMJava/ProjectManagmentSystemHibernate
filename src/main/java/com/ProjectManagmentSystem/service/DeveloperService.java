@@ -22,12 +22,10 @@ public class DeveloperService extends SessionUtil implements DeveloperDAO {
     @Override
     public List<Developers> getAll() throws SQLException {
         openTransactionSession();
-        String sql = "SELECT * FROM DEVELOPERS";
         Session session = getSession();
-        Query query = session.createSQLQuery(sql).addEntity(Developers.class);
-        List<Developers> developersList = query.list();
+        List<Developers> developers = session.createQuery("from Developers ").list();
         closeTransactionSession();
-        return developersList;
+        return developers;
     }
 
     @Override

@@ -23,12 +23,10 @@ public class ProjectService extends SessionUtil implements ProjectDAO {
     @Override
     public List<Projects> getAll() throws SQLException {
         openTransactionSession();
-        String sql = "SELECT * FROM PROJECTS";
         Session session = getSession();
-        Query query = session.createSQLQuery(sql).addEntity(Projects.class);
-        List<Projects> projectsList = query.list();
+        List<Projects> projects = session.createQuery("from Projects").list();
         closeTransactionSession();
-        return projectsList;
+        return projects;
     }
 
     @Override

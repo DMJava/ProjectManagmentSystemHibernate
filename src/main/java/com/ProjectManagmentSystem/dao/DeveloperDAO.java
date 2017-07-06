@@ -10,7 +10,7 @@ public interface DeveloperDAO {
     void add(Developers developer) throws SQLException;
 
     //READ
-    List<Developers> getAll() throws SQLException;
+    List getAll() throws SQLException;
 
     //UPDATE
     void update(Developers developer) throws SQLException;

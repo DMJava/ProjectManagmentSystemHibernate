@@ -15,26 +15,26 @@ public class Developers {
     private String developer_name;
     @Column(name = "salary")
     private int salary;
+
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    private Skills skills;
+    private Set<Skills> skills;
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(name = "Projects_has_developers", joinColumns = @JoinColumn(name = "dev_id"),
+            inverseJoinColumns = @JoinColumn(name = "proj_id")
+    )
     private Set<Projects> projects;
 
     public Developers() {
 
     }
 
-    public Developers(int developer_id, String developer_name, int salary, Skills skills, Set<Projects> projects) {
+    public Developers(int developer_id, String developer_name, int salary, Set<Projects> projects) {
         this.developer_id = developer_id;
         this.developer_name = developer_name;
         this.salary = salary;
-        this.skills = skills;
         this.projects = projects;
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "developer_id", unique = true, nullable = false)
 
     public int getDeveloper_id() {
         return developer_id;
@@ -60,11 +60,11 @@ public class Developers {
         this.salary = salary;
     }
 
-    public Skills getSkills() {
+    public Set<Skills> getSkills() {
         return skills;
     }
 
-    public void setSkills(Skills skills) {
+    public void setSkills(Set<Skills> skills) {
         this.skills = skills;
     }
 
@@ -82,7 +82,7 @@ public class Developers {
                 "developer_id=" + developer_id +
                 ", developer_name='" + developer_name + '\'' +
                 ", salary=" + salary +
-                ", skills=" + skills +
+                ", projects=" + projects +
                 '}';
     }
 }

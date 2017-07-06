@@ -1,29 +1,34 @@
 package com.ProjectManagmentSystem.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 public class Projects_has_developers {
 
-    private int projects_project_id;
-    private int developers_developer_id;
+    private int proj_id;
+    private int dev_id;
 
-    public Projects_has_developers(){
+    public Projects_has_developers() {
 
     }
 
-    public int getProjects_project_id() {
-        return projects_project_id;
+    public int getProj_id() {
+        return proj_id;
     }
 
-    public void setProjects_project_id(int projects_project_id) {
-        this.projects_project_id = projects_project_id;
+    public void setProj_id(int proj_id) {
+        this.proj_id = proj_id;
     }
 
-    public int getDevelopers_developer_id() {
-        return developers_developer_id;
+    public int getDev_id() {
+        return dev_id;
     }
 
-    public void setDevelopers_developer_id(int developers_developer_id) {
-        this.developers_developer_id = developers_developer_id;
+    public void setDev_id(int dev_id) {
+        this.dev_id = dev_id;
     }
 
     @Override
@@ -33,22 +38,22 @@ public class Projects_has_developers {
 
         Projects_has_developers that = (Projects_has_developers) o;
 
-        if (projects_project_id != that.projects_project_id) return false;
-        return developers_developer_id == that.developers_developer_id;
+        if (proj_id != that.proj_id) return false;
+        return dev_id == that.dev_id;
     }
 
     @Override
     public int hashCode() {
-        int result = projects_project_id;
-        result = 31 * result + developers_developer_id;
+        int result = proj_id;
+        result = 31 * result + dev_id;
         return result;
     }
 
     @Override
     public String toString() {
         return "Projects_has_developers{" +
-                "projects_project_id=" + projects_project_id +
-                ", developers_developer_id=" + developers_developer_id +
+                "proj_id=" + proj_id +
+                ", dev_id=" + dev_id +
                 '}';
     }
 }

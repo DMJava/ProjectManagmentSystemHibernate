@@ -14,7 +14,7 @@ public class Projects {
     private String project_name;
     @Column(name = "cost")
     private int cost;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "projects")
     private Set<Developers> developerList;
 
     public Projects() {
